@@ -30,8 +30,11 @@ const Feeds = () => {
       setFilteredPosts(posts);
     }
 
-    const filtered = posts.filter((post) =>
-      post.prompt?.toLowerCase().includes(searchPosts),
+    const filtered = posts.filter(
+      (post) =>
+        post.prompt?.toLowerCase().includes(searchPosts) ||
+        post.tags === searchPosts ||
+        post.username.toLowerCase().includes(searchPosts),
     );
 
     setFilteredPosts(filtered);
