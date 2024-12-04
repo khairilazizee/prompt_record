@@ -1,3 +1,5 @@
+import Feeds from "@/components/Feeds";
+
 export default function Home() {
   return (
     <section className="w-full flex-center flex-col">
@@ -10,6 +12,8 @@ export default function Home() {
         Open-source AI prompting tools for modern world to discover.Share your
         prompts with the world
       </p>
+
+      <Feeds />
     </section>
   );
 }
