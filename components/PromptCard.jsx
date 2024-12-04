@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const { data: session } = useSession();
@@ -32,7 +33,9 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 
           <div className="flex flex-col">
             <h4 className="font-satoshi font-semibold text-base text-gray-700">
-              {post.creator.username}
+              <Link href={`/profile/user?id=${post.creator._id}`}>
+                {post.creator.username}
+              </Link>
             </h4>
             <p className="font-inter font-normal text-sm text-gray-500">
               {post.creator.email}
