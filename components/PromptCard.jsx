@@ -33,7 +33,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 
           <div className="flex flex-col">
             <h4 className="font-satoshi font-semibold text-base text-gray-700">
-              <Link href={`/profile/user?id=${post.creator._id}`}>
+              <Link href={`/profile/${post.creator._id}`}>
                 {post.creator.username}
               </Link>
             </h4>

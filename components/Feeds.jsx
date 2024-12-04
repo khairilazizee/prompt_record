@@ -41,7 +41,6 @@ const Feeds = () => {
   };
 
   const handleTagClick = (tags) => {
-    // alert("tags: " + tags);
     const filtered = posts.filter((post) => post.tags === tags);
     setFilteredPosts(filtered);
   };

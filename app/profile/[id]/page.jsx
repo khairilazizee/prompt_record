@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import Profile from "@/components/Profile";
 
-const MyProfile = () => {
+const MyProfile = ({ params }) => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
@@ -15,12 +15,12 @@ const MyProfile = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(`/api/users/${id}/posts`);
+      const res = await fetch(`/api/users/${params.id}/posts`);
       const data = await res.json();
       setPosts(data);
     };
-    if (id) fetchData();
-  }, [id]);
+    if (params.id) fetchData();
+  }, [params.id]);
 
   const handleEdit = (post) => {
     router.push(`/update-prompt?id=${post._id}`);
